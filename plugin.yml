@@ -1,5 +1,5 @@
 name: CustumItems
-main: crystal/Main
+main: CustomItems/Main
 api: 3.0.0
 author: secretsiver313
 version: 1.0.0
