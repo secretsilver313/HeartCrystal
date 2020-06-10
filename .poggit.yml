@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/secretsilver313/HeartCrystal
+build-by-default: true
+branches:
+- master
+projects:
+  HeartCrystal:
+    path: ""
+...
