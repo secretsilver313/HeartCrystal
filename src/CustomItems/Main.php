@@ -17,7 +17,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
 
-class HeartCrystal extends PluginBase{
+class Main extends PluginBase{
 
 
    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
