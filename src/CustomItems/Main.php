@@ -32,8 +32,9 @@ class Main extends PluginBase{
                 $sender->$inv->addItem($item);
                 $sender->sendMessage("You have recieved an Extra Heart Crystal");
                 }
-             }else{
+             else{
                $sender->sendMessage("No permission for this command.");
+             }
              }
           }
    return true;
