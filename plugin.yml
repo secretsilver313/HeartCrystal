@@ -1,0 +1,10 @@
+name: CustumItems
+main: CustomItems/Main
+api: 3.0.0
+author: secretsiver313
+description: Custom items for secretsilvers server
+commands:
+  hc:
+    default: op
+    permission: secret.hc.use
+    description: Gives you a Health Crystal
