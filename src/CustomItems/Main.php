@@ -45,10 +45,10 @@ class Main extends PluginBase{
       $inv = $player->$getInventory;
       $item = Item::get(399, 0, 1);
       $this->cooldown[$player] = time + 5;
-      if(this->cooldown[$player] >= 0) {
+      if($this->cooldown[$player] >= 0) {
          $player->sendMessage("You are on a cooldown.");
       }
-      if(this->cooldown[$player] == 0){
+      if($this->cooldown[$player] == 0){
          $player->sendMessage("Cooldown for a heart is over.");
       }
       if($player->getItemInHand->getId == 399) {
