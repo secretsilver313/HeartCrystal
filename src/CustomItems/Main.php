@@ -1,6 +1,6 @@
 <?php
 
-namespace crystal;
+namespace CustomItems;
 
 use pocketmine\Server;
 use pocketmine\event\block\BlockBreakEvent;
