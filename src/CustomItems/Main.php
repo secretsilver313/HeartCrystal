@@ -16,6 +16,7 @@ use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerInteractEvent;
+use pocketmine\command\Command
 
 class Main extends PluginBase{
 
