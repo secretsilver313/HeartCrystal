@@ -57,7 +57,7 @@ class Main extends PluginBase {
          if($player->getMaxHealth() < 40) {
             $player->setMaxHealth->getMaxHealth() +1;
             if($inv->contains(Item::get(399, 0, 1))) {
-               $inventory->removeItem(Item::get(399, 0, 1));
+               $inv->removeItem(Item::get(399, 0, 1));
          }else{
             if($player->getMaxHealth() == 40) {
                $player->sendMessage("MAX HEARTS REACHED");
