@@ -41,7 +41,7 @@ class Main extends PluginBase {
    return true;
    }
 
-   public function onPlayerInteractEvent(onPlayerInteractEvent $event)
+   public function onPlayerInteractEvent(PlayerInteractEvent $event)
    {
       $player = $event->getPlayer();
       $inv = $player->$getInventory;
