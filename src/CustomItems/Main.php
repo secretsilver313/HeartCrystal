@@ -29,7 +29,7 @@ class Main extends PluginBase {
                 $inv = $sender->getInventory();
                 $item = Item::get(399, 0, 1);
                 $item->setCustomName("Heart Crystal");
-                $item->setLore[("Gain an extra heart!\nLose extra Hearts on death!\n25% chance to LOSE a heart")];
+                $item->setLore(["Gain an extra heart!\nLose extra Hearts on death!\n25% chance to LOSE a heart"]);
                 $sender->$inv->addItem($item);
                 $sender->sendMessage("You have recieved an Extra Heart Crystal");
                 }
