@@ -19,7 +19,8 @@ use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\command\Command;
 
 class Main extends PluginBase {
-
+   
+   private $cooldown;
 
    public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool
    {
@@ -46,25 +47,22 @@ class Main extends PluginBase {
       $player = $event->getPlayer();
       $inv = $player->getInventory();
       $item = Item::get(399, 0, 1);
-      //this is where i need a cooldown, from here
-      $this->cooldown[$player] = time + 5;
-      if($this->cooldown[$player] >= 0) {
-         $player->sendMessage("You are on a cooldown.");
-      }
-      if($this->cooldown[$player] == 0){
-         $player->sendMessage("Cooldown for a heart is over.");
-      }
-      // and it ends here 
-      if($player->getItemInHand()->getId() == 399) {
-         if($player->getMaxHealth() < 40) {
-            $player->setMaxHealth->getMaxHealth() +1;
-            if($inv->contains(Item::get(399, 0, 1))) {
-               $inv->removeItem(Item::get(399, 0, 1));
-         }else{
-            if($player->getMaxHealth() == 40) {
-               $player->sendMessage("MAX HEARTS REACHED");
+	   if(!isset($this->cooldown[$player->getName()])){
+         $this->cooldown[$player->getName()] = time() + 600; //[600 second] [0 hours] [10 minute] cool down 
+         if($player->getItemInHand()->getId() == 399) {
+            if($player->getMaxHealth() < 40) {
+               $player->setMaxHealth->getMaxHealth() + 1;
+               if($inv->contains(Item::get(399, 0, 1))) {
+                  $inv->removeItem(Item::get(399, 0, 1));
+                  }elseif($player->getMaxHealth() == 40) {
+                          $player->sendMessage("MAX HEARTS REACHED");
+      //cooldown
+	                       if(time() < $this->cooldown[$player->getName()]){
+	                          $minutes = ($this->cooldown[$player->getName()] - time()) / 60;
+                             $player->sendMessage("§7(§c!§7) §cCooldown §5" . (round($minutes)) . " §cminutes remaining");
+                          }
+               }
             }
-         }
          }
       }
    }
