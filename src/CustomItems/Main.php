@@ -51,7 +51,7 @@ class Main extends PluginBase {
          $this->cooldown[$player->getName()] = time() + 600; //[600 second] [0 hours] [10 minute] cool down 
          if($player->getItemInHand()->getId() == 399) {
             if($player->getMaxHealth() < 40) {
-               $player->setMaxHealth(getMaxHealth() + 1);
+               $player->setMaxHealth($player->getMaxHealth() + 1);
                if($inv->contains(Item::get(399, 0, 1))) {
                   $inv->removeItem(Item::get(399, 0, 1));
                   }elseif($player->getMaxHealth() == 40) {
