@@ -49,7 +49,7 @@ class Main extends PluginBase {
       $item = Item::get(399, 0, 1);
 	   if(!isset($this->cooldown[$player->getName()])){
          $this->cooldown[$player->getName()] = time() + 600; //[600 second] [0 hours] [10 minute] cool down 
-         if($player->getItemInHand()->getId() == 399) {
+         if($player->getInventory()->getItemInHand()->getId() == 399 && $player->getInventory()->getItemInHand()->getName() === "Heart Crystal" ) {
             if($player->getMaxHealth() < 40) {
                $player->setMaxHealth($player->getMaxHealth() + 1);
                if($inv->contains(Item::get(399, 0, 1))) {
