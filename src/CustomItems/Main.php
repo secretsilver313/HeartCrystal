@@ -46,6 +46,7 @@ class Main extends PluginBase {
       $player = $event->getPlayer();
       $inv = $player->getInventory();
       $item = Item::get(399, 0, 1);
+      //this is where i need a cooldown, from here
       $this->cooldown[$player] = time + 5;
       if($this->cooldown[$player] >= 0) {
          $player->sendMessage("You are on a cooldown.");
@@ -53,6 +54,7 @@ class Main extends PluginBase {
       if($this->cooldown[$player] == 0){
          $player->sendMessage("Cooldown for a heart is over.");
       }
+      // and it ends here 
       if($player->getItemInHand()->getId() == 399) {
          if($player->getMaxHealth() < 40) {
             $player->setMaxHealth->getMaxHealth() +1;
